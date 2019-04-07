@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reside_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:fitsSystemWindows="false"
+    tools:context=".MainActivity">
+
+    <!-- This is the actual RESIDING VIEW.
+        Replace FrameLayout with any View of Choice -->
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v4.view.ViewPager>
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:elevation="0dp">
+
+
+            <com.orsteg.wiconnmobileapp.GroupedStatusProgressView
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                app:active_color="@android:color/white"
+                app:inactive_color="@color/inactive_white"
+                app:status_count="4"
+                app:view_count="1" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <RelativeLayout
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="0dp">
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        app:civ_border_color="@android:color/white"
+                        app:civ_border_width="1dp"
+                        app:civ_shadow="false"
+                        app:srcCompat="@drawable/profile_pic" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jane Doe"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Today, 01:25"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/scrim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:background="@android:color/black"
+        android:visibility="gone">
+
+    </FrameLayout>
+
+
+    <!-- A FrameLayout preventing its children from drawing on window insets.
+        The main content and any view not required to draw on insets are placed here.
+        Any View placed here is drawn over Residing view -->
+    <FrameLayout
+        android:id="@+id/content_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <!-- The main layout is added using an include tag. It is drawn over other views-->
+
+        <FrameLayout
+            android:id="@+id/reply_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:layout_dodgeInsetEdges="bottom">
+
+            <LinearLayout
+                android:id="@+id/fore"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/reply_back_color"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/reply"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reply_back"
+                    android:gravity="center"
+                    android:text="Click to reply"
+                    android:textColor="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/hearth"
+                        style="@style/Base.Widget.AppCompat.ActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:padding="0dp"
+                        android:paddingEnd="0dp"
+                        android:paddingStart="0dp"
+                        app:srcCompat="@drawable/ic_favorite_border_white_24dp" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="230"
+                        android:textColor="@color/inactive_white" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/m_wrap"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/message_box_1"
+                    android:gravity="bottom">
+
+                    <ImageButton
+                        android:id="@+id/emoji"
+                        style="@style/Base.Widget.AppCompat.ActionButton"
+                        android:layout_width="40dp"
+                        android:layout_height="45dp"
+                        android:padding="0dp"
+                        app:srcCompat="@drawable/ic_insert_emoticon_black_24dp" />
+
+                    <hani.momanii.supernova_emoji_library.Helper.EmojiconEditText
+                        android:id="@+id/message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toRightOf="@+id/imageButton"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:ems="10"
+                        android:hint="Type A Message"
+                        android:inputType="textMultiLine"
+                        android:maxHeight="150dp"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton2"
+                        style="@style/Base.Widget.AppCompat.ActionButton"
+                        android:layout_width="40dp"
+                        android:layout_height="45dp"
+                        android:layout_alignBottom="@+id/message"
+                        android:layout_toLeftOf="@+id/frame"
+                        android:padding="0dp"
+                        android:rotation="-45"
+                        app:srcCompat="@drawable/ic_attach_file_black_24dp" />
+
+                    <ImageButton
+                        android:id="@+id/cam"
+                        style="@style/Base.Widget.AppCompat.ActionButton"
+                        android:layout_width="40dp"
+                        android:layout_height="45dp"
+                        android:padding="0dp"
+                        app:srcCompat="@drawable/ic_menu_camera" />
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/fab"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/send_2"
+                    app:srcCompat="@drawable/ic_send_black_24dp" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</FrameLayout>

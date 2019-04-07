@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1180FF</color>
+    <color name="colorPrimaryDark">#1565c0</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="chatBack">#e4e4f5</color>
+
+    <color name="user_message">#63a7f4</color>
+    <color name="other_message">#FFFFFF</color>
+    <color name="new_message">#75ffffff</color>
+    <color name="incognito_tint">#a28a90f6</color>
+    <color name="time_color">#9a9a9b</color>
+    <color name="header_color">#f5f5f5</color>
+    <color name="fab_mini">#90caf9</color>
+    <color name="comment_back">#64000000</color>
+    <color name="inactive_white">#9cffffff</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="app_background">#FFFFFF</color>
+    <color name="app_hint">#9cffffff</color>
+    <color name="reply_back_color">#45000000</color>
+</resources>

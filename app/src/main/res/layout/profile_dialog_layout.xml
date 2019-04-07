@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@android:color/transparent"
+    android:minWidth="400dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/profile_dialog_back"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView14"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Available !"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="20dp"
+            android:text="Jane Doe"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            style="@style/Base.Widget.AppCompat.ActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            app:srcCompat="@drawable/ic_videocam_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            style="@style/Base.Widget.AppCompat.ActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/ic_camera_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            style="@style/Base.Widget.AppCompat.ActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            app:srcCompat="@drawable/ic_chat_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            style="@style/Base.Widget.AppCompat.ActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/white_circle"
+            app:srcCompat="@drawable/ic_settings_blue_24dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            style="@style/Base.Widget.AppCompat.ActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_circle"
+            app:srcCompat="@drawable/ic_share_blue" />
+    </RelativeLayout>
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/imageView3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/profile_pic" />
+</RelativeLayout>

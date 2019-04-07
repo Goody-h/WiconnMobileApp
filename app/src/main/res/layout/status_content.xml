@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.orsteg.wiconnmobileapp.ChatActivity">
+
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        app:layout_dodgeInsetEdges="bottom">
+
+        <LinearLayout
+            android:id="@+id/m_wrap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/message_box"
+            android:gravity="bottom">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                style="@style/Base.Widget.AppCompat.ActionButton"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:padding="0dp"
+                app:srcCompat="@drawable/ic_insert_emoticon_black_24dp" />
+
+            <EditText
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/imageButton"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:ems="10"
+                android:hint="Type A Message"
+                android:inputType="textMultiLine"
+                android:maxHeight="150dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="3dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                style="@style/Base.Widget.AppCompat.ActionButton"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_alignBottom="@+id/message"
+                android:layout_toLeftOf="@+id/frame"
+                android:padding="0dp"
+                android:rotation="-45"
+                app:srcCompat="@drawable/ic_attach_file_black_24dp" />
+
+            <ImageButton
+                android:id="@+id/cam"
+                style="@style/Base.Widget.AppCompat.ActionButton"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:padding="0dp"
+                app:srcCompat="@drawable/ic_menu_camera" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/fab"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom"
+            android:layout_margin="5dp"
+            android:background="@drawable/send_1"
+            app:srcCompat="@drawable/ic_send_black_24dp" />
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

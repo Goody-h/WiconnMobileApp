@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minHeight="35dp"
+    android:minWidth="100dp"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:text="Jane Doe"
+        android:textColor="@color/user_message"
+        android:visibility="gone" />
+
+    <ViewStub
+        android:id="@+id/plain_text_stub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:inflatedId="@+id/plain_text"
+        android:layout="@layout/plain_text_layout" />
+
+    <ViewStub
+        android:id="@+id/image_stub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:inflatedId="@+id/image"
+        android:layout="@layout/image_layout" />
+</RelativeLayout>

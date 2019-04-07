@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cam"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.orsteg.wiconnmobileapp.CameraFragment">
+
+
+    <FrameLayout
+        android:id="@+id/camera_scrim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.75"
+        android:background="@android:color/black">
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/camera_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="110dp">
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/primary_round"
+            android:elevation="5dp">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/g"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"
+            android:elevation="5dp"
+            android:rotation="120">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:rotation="-120"
+                app:fabSize="normal"
+                app:srcCompat="@drawable/ic_photo_library_black_24dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/v"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"
+            android:elevation="5dp"
+            android:rotation="240">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:rotation="-240"
+                app:fabSize="normal"
+                app:srcCompat="@drawable/ic_videocam_black_24dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/c"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"
+            android:elevation="5dp">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                app:fabSize="normal"
+                app:srcCompat="@drawable/ic_camera_white_24dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>
