@@ -1,9 +1,7 @@
 package com.orsteg.wiconnmobileapp
 
-import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -21,15 +19,11 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.transition.*
-import android.transition.TransitionSet.ORDERING_TOGETHER
 import android.util.AttributeSet
-import android.util.Log
-import android.util.TypedValue
 import android.view.*
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
-import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_main.*
 import kotlinx.android.synthetic.main.fragment_main2.view.*
@@ -118,9 +112,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
         tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
 
-        setupTabs()
+        setUpTabs()
 
-        val pageChange = object : ViewPager.OnPageChangeListener{
+
+        container.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
             override fun onPageScrollStateChanged(state: Int) {
 
             }
@@ -158,8 +153,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 }
             }
         }
-
-        container.addOnPageChangeListener(pageChange)
+        )
 
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
@@ -271,10 +265,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    fun openSignup() {
-
-    }
-
     fun login() {
         mAuthHandler?.setAuthState(AuthHandler.STATE_ONLINE)
     }
@@ -283,11 +273,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         mAuthHandler?.setAuthState(AuthHandler.STATE_OFFLINE)
     }
 
-    fun cancel() {
-        finish()
-    }
-
-    fun signup() {
+    fun signUp() {
         val intent = Intent(this, SignUpActivity::class.java)
         startActivityForResult(intent, AuthHandler.SIGN_UP_REQUEST)
     }
@@ -407,6 +393,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
+    /**
+     * Custom behaviour for the stories bottom sheet
+     */
     class MyAppBarBehaviour(context: Context, attr: AttributeSet) : AppBarLayout.Behavior(context, attr) {
 
         private var mIsSheetTouched: Boolean = false
@@ -521,7 +510,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    fun setupTabs() {
+    fun setUpTabs() {
 
         val aTabs = arrayOf(TabData(R.drawable.chat_tab, 0), TabData(R.drawable.call_tab, 20))
         for (i in 0..1) {
@@ -539,7 +528,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    class TabData (val image: Int, val count: Int)
+    data class TabData (val image: Int, val count: Int)
 
     override fun onBackPressed() {
         when {
@@ -616,8 +605,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
 
             trans?.apply {
-                val pageWidth = width
-
                 // get an instance of the bottom value of the appBar
                 val h = appbar.bottom
 
@@ -657,7 +644,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                     }
                     1 -> {
-                        //translationX = pageWidth * positionOffset
 
                         val factor = 180 * positionOffset
 
@@ -693,7 +679,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     }
                     else -> {
                         if (translationX != 0f) {
-                           // translationX = 0f
+
                         }
                         if (appbar.translationX != 0f) {
                             appbar.translationX = 0f
@@ -712,7 +698,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 }
 
                 if (trans == this && position == -1f) {
-                    //translationX = width.toFloat()
+
                 } else if (cam == this && position == 0f) {
                     appbar.translationY = - appbar.bottom.toFloat()
 

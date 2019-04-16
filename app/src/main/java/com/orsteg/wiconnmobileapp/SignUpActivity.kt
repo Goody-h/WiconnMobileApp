@@ -76,7 +76,7 @@ class SignUpActivity : AppCompatActivity() {
     fun setStep(foward: Boolean = true) {
 
         var isNull = false
-        val fragment = supportFragmentManager.findFragmentByTag("fragment.signup.$mCurrentStep")
+        val fragment = supportFragmentManager.findFragmentByTag("fragment.signUp.$mCurrentStep")
                 ?: SignUpFragment.newInstance(mCurrentStep, "").apply { isNull = true }
 
         if (fragment != currentFragment) {
@@ -108,7 +108,7 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             if (isNull) {
-                transaction.replace(steps.id, fragment, "fragment.signup.$mCurrentStep")
+                transaction.replace(steps.id, fragment, "fragment.signUp.$mCurrentStep")
             } else {
                 transaction.replace(steps.id, fragment)
             }

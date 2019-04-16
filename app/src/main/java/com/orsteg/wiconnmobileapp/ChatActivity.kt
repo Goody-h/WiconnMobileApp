@@ -29,8 +29,8 @@ class ChatActivity : AppCompatActivity() {
         emojiKeyboard?.setIconsIds(R.drawable.ic_keyboard_black_24dp, R.drawable.ic_insert_emoticon_black_24dp)
         emojiKeyboard?.ShowEmojIcon()
 
-        fab.setOnClickListener { _ ->
-            addMessage()
+        fab.setOnClickListener {
+            sendMessage()
         }
         last.setOnClickListener {
             adapter?.scroll(end = true)
@@ -100,10 +100,11 @@ class ChatActivity : AppCompatActivity() {
     }
 
 
-    fun addMessage() {
+    fun sendMessage() {
 
         val mes = message.text.toString()
 
+        // This is a test implementation, just for updating the adapter
         if(mes != ""){
             val u = arrayOf("user", "my", "user1", "my", "user3")
             val s = rnd.nextInt(4)

@@ -46,7 +46,6 @@
         <activity android:name=".CallInfoActivity" />
         <activity android:name=".CallActivity" />
         <activity android:name=".WriteStatusActivity" />
-        <activity android:name=".LoginActivity" />
         <activity
                 android:name=".SignUpActivity"
                 android:theme="@style/AppTheme.NoActionBar" />

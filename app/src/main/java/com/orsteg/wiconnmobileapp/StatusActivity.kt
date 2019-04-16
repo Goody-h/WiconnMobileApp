@@ -361,7 +361,6 @@ class StatusActivity : AppCompatActivity() {
 
             if (positionOffset != 0f && mState == ViewPager.SCROLL_STATE_DRAGGING) {
                 progress.pauseGroup()
-                Log.d("mytag", "transform pauseAutoSeek $position")
             } else {
                 progress.playGroup()
             }
@@ -372,7 +371,6 @@ class StatusActivity : AppCompatActivity() {
                 positionOffset <= 0.25f -> {
                     //layout position
                     getFragment(position)?.mStatusGroupHolder?.showGroupLayout()
-                    Log.d("mytag", "layout position")
 
                     1f - positionOffset/ 0.25f
                 }
@@ -387,7 +385,6 @@ class StatusActivity : AppCompatActivity() {
                 else -> {
                     //layout position + 1
                     getFragment(position + 1)?.mStatusGroupHolder?.showGroupLayout()
-                    Log.d("mytag", "layout position + 1")
 
                     (positionOffset - 0.5f) / 0.5f
                 }
@@ -430,7 +427,6 @@ class StatusActivity : AppCompatActivity() {
                 if (position == 0f && (mState == ViewPager.SCROLL_STATE_IDLE || mState == ViewPager.SCROLL_STATE_SETTLING)) {
                     getFragment(index)?.mStatusGroupHolder?.setAsCurrentGroup()
                     progress.playGroup()
-                    Log.d("mytag", "transform startAutoSeek $index")
                 }
             }
         }
